@@ -20,7 +20,7 @@ public class JokenPoService {
         System.out.print("Informe seu nome: ");
         String name = sc.nextLine().toUpperCase();
         Player user = new Player(name);
-        System.out.print("Qual nome você quer me dar?: ");
+        System.out.print("Qual nome você quer me dar? ");
         String nameComputer = sc.nextLine().toUpperCase();
         Player computer = new Player(nameComputer);
 
