@@ -5,12 +5,15 @@ import java.util.Map;
 import java.util.Random;
 import java.util.Scanner;
 
+import static org.example.service.JokenPoService.startGame;
+
 public record JokenPo(
         Player user,
         Player computer,
         Integer rounds
 ) {
     static Scanner sc = new Scanner(System.in);
+    static String go = "n";
 
     public void toPlay() {
 
@@ -34,7 +37,24 @@ public record JokenPo(
             winnerRound(result, (i + 1));
 
         }
+
         showFinalResult();
+        sc.nextLine();
+        System.out.print("Deseja continuar? (s/n) ");
+        go = sc.next();
+
+        while ("s".equalsIgnoreCase(go)) {
+            System.out.println("\nDeseja continuar com a mesma pontuação ou reiniciar o Game?");
+            System.out.print("'c' - Continuar ou 'r' - Reiniciar: ");
+            String confirm = sc.next();
+            if ("c".equalsIgnoreCase(confirm)) {
+                System.out.print("\n" + user.getName() + ", informe quantas partidas você deseja jogar desta vez: ");
+                Integer rounds = sc.nextInt();
+                new JokenPo(user, computer, rounds).toPlay();
+            } else {
+                startGame().toPlay();
+            }
+        }
     }
 
     public void showFinalResult() {
@@ -49,7 +69,7 @@ public record JokenPo(
             System.out.println("\t\t\tEMPATE!");
         } else {
             String finalWinner = (finalScoreUser > finalScoreComputer) ? user.getName() : computer.getName();
-            System.out.println("\t\tVENCEDOR = *** " + finalWinner + " ***");
+            System.out.println("\n\t\tVENCEDOR = *** " + finalWinner + " ***");
         }
         System.out.println("\n*************************************************\n");
     }
