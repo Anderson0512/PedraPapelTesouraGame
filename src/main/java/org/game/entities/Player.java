@@ -1,4 +1,4 @@
-package org.example.entities;
+package org.game.entities;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -13,7 +13,8 @@ public class Player {
         this.name = name;
         this.score = 0;
     }
-    public void incrementScore(){
+
+    public void incrementScore() {
         setScore(getScore() + 1);
     }
 }
