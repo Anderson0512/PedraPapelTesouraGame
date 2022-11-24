@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="32e44e5d-18de-4e23-bc47-b6e370750ae0" name="Changes" comment="Preparação das classes">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/game/model/gameException/GameException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/JokenPo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/entities/JokenPo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/entities/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/service/JokenPoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/service/JokenPoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/game/entities/JokenPo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/game/entities/JokenPo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,5 +80,21 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Preparação das classes" />
     <option name="LAST_COMMIT_MESSAGE" value="Preparação das classes" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/game/entities/JokenPo.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/game/entities/JokenPo.java</url>
+          <line>151</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

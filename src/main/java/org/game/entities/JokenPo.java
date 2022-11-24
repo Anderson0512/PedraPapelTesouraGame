@@ -20,6 +20,8 @@ public record JokenPo(
     public void toPlay() {
 
         System.out.println("\n**************  SEJA BEM VINDO(A), " + user.getName() + " ****************\n");
+        Integer resultParc = 0;
+        Integer iFor = 0;
 
         try {
 
@@ -30,11 +32,13 @@ public record JokenPo(
                 if (validateInputUser(choiceUser)) continue;
                 Integer choiceComputer = choiceComputer();
                 System.out.println();
-                System.out.println(user.getName() + ": Escolheu " + choiceUser + " ((" + choiceType(choiceUser) + ")) X " + computer.getName() + ": Escolheu " + choiceComputer + " ((" + choiceType(choiceComputer) + "))\n");
+                StringBuilder choicesDescription = choicesDescription(choiceUser, choiceComputer);
+                System.out.println(choicesDescription);
                 descriptionReason(choiceUser, choiceComputer);
                 Integer result = choiceUser - choiceComputer;
                 winnerRound(result, (i + 1));
-
+                StringBuilder partial = partialResult();
+                System.out.println(partial);
             }
 
             showFinalResult();
@@ -118,7 +122,7 @@ public record JokenPo(
                 winnerRound = user.getName();
             }
         }
-        System.out.println("\nVencedor da Rodada (" + round + "): " + winnerRound + "\n");
+        System.out.println("\t\tVencedor da Rodada (" + round + "): " + winnerRound + "\n");
     }
 
     private Integer choiceComputer() {
@@ -154,13 +158,43 @@ public record JokenPo(
 
     private void descriptionReason(Integer one, Integer two) {
         if (1 == one && 2 == two || 2 == one && 1 == two) {
-            System.out.println("*** Papel envolve Pedra ***");
+            System.out.println("\t\t*** Papel envolve Pedra ***");
         } else if (1 == one && 3 == two || 3 == one && 1 == two) {
-            System.out.println("*** Pedra amassa Tesoura ***");
+            System.out.println("\t\t*** Pedra amassa Tesoura ***");
         } else if (one == two) {
             System.out.println("\t\t*Rodada Neutra*");
         } else {
-            System.out.println("*** Tesoura corta Papel ***");
+            System.out.println("\t\t*** Tesoura corta Papel ***");
         }
+    }
+
+    private StringBuilder choicesDescription(Integer choiceUser, Integer choiceComputer) {
+
+        return new StringBuilder(new StringBuilder()
+                .append(user.getName())
+                .append(": Escolheu ")
+                .append(choiceUser)
+                .append(" ((")
+                .append(choiceType(choiceUser))
+                .append(")) X ")
+                .append(computer.getName())
+                .append(": Escolheu ")
+                .append(choiceComputer)
+                .append(" ((")
+                .append(choiceType(choiceComputer))
+                .append("))\n"));
+    }
+
+    private StringBuilder partialResult() {
+        return new StringBuilder(
+                new StringBuilder("\t\tPLACAR PARCIAL: ")
+                        .append(user.getName())
+                        .append(" ")
+                        .append(user.getScore())
+                        .append(" X ")
+                        .append(computer.getScore())
+                        .append(" ")
+                        .append(computer.getName())
+                        .append("\n"));
     }
 }
